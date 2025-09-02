@@ -64,6 +64,25 @@ struct RepositoryDetailsView: View {
     }
 }
 
-//#Preview {
-//    RepositoryDetailsView()
-//}
+#Preview {
+    let owner = Owner(
+        login: "swiftlang",
+        id: 42816656,
+        avatarURL: URL(string: "https://avatars.githubusercontent.com/u/42816656?v=4")
+    )
+    
+    let repository = Repository(
+        id: 44838949,
+        name: "swift",
+        fullName: "swiftlang/swift",
+        description: "The Swift Programming Language",
+        stargazersCount: 68999,
+        forksCount: 10523,
+        htmlURL: URL(string: "https://github.com/swiftlang/swift")!,
+        language: "C++",
+        owner: owner
+    )
+    
+    RepositoryDetailsView(viewModel: RepositoryDetailsViewModel(repository: repository))
+}
+

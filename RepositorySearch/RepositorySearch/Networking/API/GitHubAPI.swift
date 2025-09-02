@@ -39,10 +39,10 @@ actor GitHubAPI {
         }
 
         let (data, response) = try await session.data(for: request)
+        // try Task.checkCancellation()
         
         if let http = response as? HTTPURLResponse {
             if http.statusCode == 403 {
-                // rate limit or forbidden
                 let reset = parseRateLimitReset(http)
                 throw APIError.rateLimited(resetAt: reset)
             }
