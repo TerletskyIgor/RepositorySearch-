@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct RepositorySearchApp: App {
+    
+    init() {
+        let token = "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"
+        KeychainHelper.shared.setupGitHubToken(token)
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SearchView()
         }
     }
 }
