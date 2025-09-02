@@ -11,7 +11,7 @@ import SwiftUI
 struct RepositorySearchApp: App {
     
     init() {
-        let token = "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"
+        let token = ""
         KeychainHelper.shared.setupGitHubToken(token)
     }
     
