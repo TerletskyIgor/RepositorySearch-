@@ -39,7 +39,7 @@ actor GitHubAPI {
         }
 
         let (data, response) = try await session.data(for: request)
-        // try Task.checkCancellation()
+        try Task.checkCancellation()
         
         if let http = response as? HTTPURLResponse {
             if http.statusCode == 403 {
